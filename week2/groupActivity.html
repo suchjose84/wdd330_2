@@ -101,17 +101,20 @@
 
             }
         }
-
+        //function declaration
         function updateTotal(value) {
             let showStretchTotal = document.getElementById('divStretch');
             console.log(value);
             showStretchTotal.innerHTML = `Total is ${value}`;
         }
-
+        //arrow functions
         const addition = (num1, num2) => num1 + num2;
         const subtraction = (num1, num2) => num1 - num2;
         const multiplication = (num1, num2) => num1 * num2;
-        const division = (num1, num2) => num1 / num2;
+        //function expression
+        const division = function(num1, num2){
+            return num1 / num2;
+        }
 
         function performOperation(operation) {
             const total = operation(
