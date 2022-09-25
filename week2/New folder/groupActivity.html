@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Requirement 1</h2>
+    
+    <input id="input1" type="text" value="">
+    <button id="button1" onclick="showText1()">Click</button>
+    <div id="div1"></div>
+
+    <h2>Requirement 2</h2>
+    
+    <input id="input2" type="text" value="">
+    <button id="button2" onclick="showText2()">Click</button>
+    <div id="div2"></div>
+
+    <script>
+    
+    function showText1(){
+        let input = document.getElementById('input1').value;
+        let output = document.getElementById('div1');
+        output.innerHTML = input;
+    }
+
+    function showText2(){
+        let input = document.getElementById('input1').value;
+        let inputNumber = parseInt(input);
+        let output = document.getElementById('div2');
+
+        if(number !== NaN){
+            output.innerHTML = "text" + inputNumber;
+            
+        }else{
+            output.innerHTML = "Please put a number";
+
+        }
+    }
+
+    function sum(){
+        let number = 0;
+        for(let i =1; i < number+1; i++){
+            total +=1;
+        }
+        return total;
+    }
+
+
+    /*for(let i=1; i < number; i++){
+            let counter = i;
+            counter = i+i;
+            }
+            return counter;
+            */
+
+
+
+    </script>
+
+
+    
+</body>
+</html>
