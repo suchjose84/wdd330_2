@@ -1,68 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
     <h2>Requirement 1</h2>
-    
+
     <input id="input1" type="text" value="">
     <button id="button1" onclick="showText1()">Click</button>
     <div id="div1"></div>
 
     <h2>Requirement 2</h2>
-    
-    <input id="input2" type="text" value="">
+
+    <input id="input2" type="text">
     <button id="button2" onclick="showText2()">Click</button>
     <div id="div2"></div>
 
+
+    <h2>Requirement 3</h2>
+
+    <input id='input31' type="text">
+    <input id='input32' type="text">
+    <button id="buttonAdd" onclick="showText3()">+</button>
+    <div id="div3"></div>
+
+    <h2>Stretch</h2>
+
+    <input id='strInput1' type="text">
+    <input id='strInput2' type="text">
+    <button id="buttonAdd" onclick="add()">+</button>
+    <button id="buttonAdd" onclick="minus()">-</button>
+    <button id="buttonAdd" onclick="multiply()">x</button>
+    <button id="buttonAdd" onclick="multiply()">/</button>
+    <div id="divStretch"></div>
+
+
+
+
     <script>
-    
-    function showText1(){
-        let input = document.getElementById('input1').value;
-        let output = document.getElementById('div1');
-        output.innerHTML = input;
-    }
-
-    function showText2(){
-        let input = document.getElementById('input1').value;
-        let inputNumber = parseInt(input);
-        let output = document.getElementById('div2');
-
-        if(number !== NaN){
-            output.innerHTML = "text" + inputNumber;
-            
-        }else{
-            output.innerHTML = "Please put a number";
-
+        function showText1() {
+            let input = document.getElementById('input1').value;
+            let output = document.getElementById('div1');
+            output.innerHTML = 'Your input is ' + input;
         }
-    }
 
-    function sum(){
-        let number = 0;
-        for(let i =1; i < number+1; i++){
-            total +=1;
-        }
-        return total;
-    }
+        function showText2() {
+            let input = document.getElementById('input2').value;
+            let output = document.getElementById('div2');
+            const inputNumber = parseInt(input);
 
+            // 2 results if the text on the input is text or number
+            if (Number.isInteger(inputNumber)) {
+                output.innerHTML = `total is ${sum(inputNumber)}`;
 
-    /*for(let i=1; i < number; i++){
-            let counter = i;
-            counter = i+i;
+            } else {
+                output.innerHTML = "Please put a number.";
+
             }
-            return counter;
-            */
+
+        }
+
+        function sum(num) {
+            let total = 0;
+            for (let i = 1; i <= num; i++) {
+                total += i;
+            }
+            return total;
+        }
+
+        function showText3() {
+
+            let number1 = parseFloat(document.getElementById("input31").value);
+            let number2 = parseFloat(document.getElementById("input32").value);
+            let output = document.getElementById('div3');
+
+            if ((Number.isNaN(number1)) && Number.isNaN(number2)) {
+                output.innerHTML = "Please put number on the textbox."
+
+            } else {
+                output.innerHTML = `Total is ${number1 + number2}`;
+            }
+
+        }
+
+        //Stretch functions
+        function getNum() {
+            let numFloat = parseFloat(document.getElementById('strInput1').value);
+            if(Number.isNaN(number)){
+                return 0;
+            }else{
+                return numFloat;
+            }
+        }
 
 
+        function add() {
 
+            let number1 = parseFloat(document.getElementById("input31").value);
+            let number2 = parseFloat(document.getElementById("input32").value);
+            let output = document.getElementById('div3');
+
+            if ((Number.isNaN(number1)) && Number.isNaN(number2)) {
+                output.innerHTML = "Please put number on the textbox."
+
+            } else {
+                output.innerHTML = `Total is ${number1 + number2}`;
+            }
+
+        }
+
+        function minus() {
+
+            let number1 = parseFloat(document.getElementById("strInput1").value);
+            let number2 = parseFloat(document.getElementById("strInput2").value);
+            let output = document.getElementById('divStretch');
+
+            if ((Number.isNaN(number1)) && Number.isNaN(number2)) {
+                output.innerHTML = "Please put number on the textbox."
+
+            } else {
+                output.innerHTML = `Total is ${add(number1, number2)}`;
+            }
+
+        }
     </script>
 
 
-    
+
 </body>
+
 </html>
