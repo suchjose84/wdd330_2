@@ -34,10 +34,10 @@
 
     <input id='strInput1' type="text">
     <input id='strInput2' type="text">
-    <button id="buttonAdd" onclick="add()">+</button>
-    <button id="buttonAdd" onclick="minus()">-</button>
-    <button id="buttonAdd" onclick="multiply()">x</button>
-    <button id="buttonAdd" onclick="multiply()">/</button>
+    <button id="buttonAdd" onclick="performOperation(addition)">+</button>
+    <button id="buttonAdd" onclick="performOperation(subtraction)">-</button>
+    <button id="buttonAdd" onclick="performOperation(multiplication)">x</button>
+    <button id="buttonAdd" onclick="performOperation(division)">/</button>
     <div id="divStretch"></div>
 
 
@@ -90,45 +90,85 @@
         }
 
         //Stretch functions
-        function getNum() {
-            let numFloat = parseFloat(document.getElementById('strInput1').value);
-            if(Number.isNaN(number)){
+
+        function getNum(numId) {
+            let float = parseFloat(document.getElementById(numId).value);
+
+            if (Number.isNaN(parseInt(float))) {
                 return 0;
-            }else{
-                return numFloat;
-            }
-        }
-
-
-        function add() {
-
-            let number1 = parseFloat(document.getElementById("input31").value);
-            let number2 = parseFloat(document.getElementById("input32").value);
-            let output = document.getElementById('div3');
-
-            if ((Number.isNaN(number1)) && Number.isNaN(number2)) {
-                output.innerHTML = "Please put number on the textbox."
-
             } else {
-                output.innerHTML = `Total is ${number1 + number2}`;
+                return float;
+
             }
+        }
+
+        function updateTotal(value) {
+            let showStretchTotal = document.getElementById('divStretch');
+            console.log(value);
+            showStretchTotal.innerHTML = `Total is ${value}`;
+        }
+
+        const addition = (num1, num2) => num1 + num2;
+        const subtraction = (num1, num2) => num1 - num2;
+        const multiplication = (num1, num2) => num1 * num2;
+        const division = (num1, num2) => num1 / num2;
+
+        function performOperation(operation) {
+            const total = operation(
+                getNum('strInput1'),
+                getNum('strInput2'));
+            updateTotal(total);
 
         }
 
-        function minus() {
 
-            let number1 = parseFloat(document.getElementById("strInput1").value);
-            let number2 = parseFloat(document.getElementById("strInput2").value);
-            let output = document.getElementById('divStretch');
 
-            if ((Number.isNaN(number1)) && Number.isNaN(number2)) {
-                output.innerHTML = "Please put number on the textbox."
 
-            } else {
-                output.innerHTML = `Total is ${add(number1, number2)}`;
-            }
 
-        }
+
+        /*
+
+                function getNum() {
+                    let numFloat = parseFloat(document.getElementById('strInput1').value);
+                    if(Number.isNaN(number)){
+                        return 0;
+                    }else{
+                        return numFloat;
+                    }
+                }
+
+
+                function add() {
+
+                    let number1 = parseFloat(document.getElementById("input31").value);
+                    let number2 = parseFloat(document.getElementById("input32").value);
+                    let output = document.getElementById('div3');
+
+                    if ((Number.isNaN(number1)) && Number.isNaN(number2)) {
+                        output.innerHTML = "Please put number on the textbox."
+
+                    } else {
+                        output.innerHTML = `Total is ${number1 + number2}`;
+                    }
+
+                }
+         
+                function minus() {
+
+                    let number1 = parseFloat(document.getElementById("strInput1").value);
+                    let number2 = parseFloat(document.getElementById("strInput2").value);
+                    let output = document.getElementById('divStretch');
+
+                    if ((Number.isNaN(number1)) && Number.isNaN(number2)) {
+                        output.innerHTML = "Please put number on the textbox."
+
+                    } else {
+                        output.innerHTML = `Total is ${add(number1, number2)}`;
+                    }
+
+                }
+
+                */
     </script>
 
 
