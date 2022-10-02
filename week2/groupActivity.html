@@ -47,7 +47,7 @@
         function showText1() {
             let input = document.getElementById('input1').value;
             let output = document.getElementById('div1');
-            output.innerHTML = 'Your input is ' + input;
+            output.innerHTML = 'You typed: ' + input;
         }
 
         function showText2() {
@@ -57,7 +57,7 @@
 
             // 2 results if the text on the input is text or number
             if (Number.isInteger(inputNumber)) {
-                output.innerHTML = `total is ${sum(inputNumber)}`;
+                output.innerHTML = `The sum of all numbers up that number is: ${sum(inputNumber)}`;
 
             } else {
                 output.innerHTML = "Please put a number.";
