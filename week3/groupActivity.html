@@ -154,7 +154,7 @@
             return inventor.year < 1600 && inventor.year >= 1500;
         });
         console.log("Requirement 1 - Filter inventors who were born in the 1500's");
-        console.log(filterAge);
+        console.table(filterAge);
 
 
 
@@ -189,6 +189,7 @@
 
         // Array.prototype.reduce()
         // 4. How many years did all the inventors live?
+        console.log("Requirement 4 - How many years did all the inventors live?");
         const reduceAge = inventors.reduce((acc, inventor) => inventor.passed - inventor.year + acc, 0);
         console.log(reduceAge);
 
@@ -244,7 +245,7 @@
 
         // ## Array Cardio Day 2
 
-        const people = [{
+        const peopleTwo = [{
                 name: 'Wes',
                 year: 1988
             },
