@@ -5,11 +5,11 @@ const weeks = [{
 {
     label: "Week2 Notes",
     url: "week2/index.html"
-}
+},
 {
     label: "Week3 Notes",
     url: "week3/index.html"
-}
+},
 {
     label: "Week4 Notes",
     url: "week4/index.html"
