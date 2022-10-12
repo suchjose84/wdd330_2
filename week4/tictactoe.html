@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        section{
+            margin: 0 auto;
+        }
+        .container {
+            margin: 0 auto;
+            width: 600px;
+            height: 600px;
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+
+        }
+
+        .box {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            border: 3px solid brown;
+            font-size: 4rem;
+            color: brown;
+        }
+
+        .box:nth-child(1),
+        .box:nth-child(2),
+        .box:nth-child(3) {
+            border-top: none;
+        }
+
+        .box:nth-child(1),
+        .box:nth-child(4),
+        .box:nth-child(7) {
+            border-left: none;
+        }
+
+        .box:nth-child(3),
+        .box:nth-child(6),
+        .box:nth-child(9) {
+            border-right: none;
+            border-left: none;
+        }
+        .box:nth-child(7),
+        .box:nth-child(8),
+        .box:nth-child(9) {
+            border-top: none;
+            border-bottom: none;
+        }
+        button{
+            margin-top: 50px;
+            margin-left: 600px;
+            width: 100px;
+            height: 30px;
+            background-color: white;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div id="box1"></div>
+            <div id="box2"></div>
+            <div id="box3"></div>
+            <div id="box4"></div>
+            <div id="box5"></div>
+            <div id="box6"></div>
+            <div id="box7"></div>
+            <div id="box8"></div>
+            <div id="box9"></div>
+        </div>
+        <button id="reset">Reset</button>
+    </section>
+
+    <script>
+        'use strict';
+
+        //variables
+
+        const container = document.querySelector(".container");
+        const reset = document.getElementById("reset");
+        const divs = document.querySelector('.container div');
+        const player1 = "X";
+        const player2 = "O";
+        const pattern1 = document.querySelector('#box1', '#box2', '#box3');
+        const pattern2 = document.querySelector('#box1', '#box5', '#box9');
+        const pattern3 = document.querySelector('#box1', '#box4', '#box7');
+        const pattern4 = document.querySelector('#box7', '#box8', '#box9');
+        const pattern5 = document.querySelector('#box3', '#box5', '#box7');
+
+
+        let player = player1;
+
+        //functions
+
+        function addPiece(e){
+            e.target.innerHTML = player;
+            console.log(player);
+            if(player === player1){
+                player = player2;
+            }else{
+                player = player1;
+            }
+        }
+
+        function resetBoard()
+        {
+            const container = document.querySelector('.container');
+            for(let i = 0; i < container.children.length; i++){
+                container.children[i].innerText = "";
+                console.log("Cleared Board");
+            }
+
+
+        }
+        function glowBoard(e){
+            e.style.backgroundColor = 'red';
+
+        }
+
+        function winner(){
+            
+            
+        }
+
+        //execution of events
+
+        container.addEventListener('click', addPiece);
+        reset.addEventListener("click", resetBoard);
+       // container.addEventListener('onmouseover', glowBoard);
+
+
+    </script>
+
+
+</body>
+
+</html>
