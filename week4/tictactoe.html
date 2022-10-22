@@ -8,9 +8,10 @@
     <title>Document</title>
 
     <style>
-        section{
+        section {
             margin: 0 auto;
         }
+
         .container {
             margin: 0 auto;
             width: 600px;
@@ -50,13 +51,15 @@
             border-right: none;
             border-left: none;
         }
+
         .box:nth-child(7),
         .box:nth-child(8),
         .box:nth-child(9) {
             border-top: none;
             border-bottom: none;
         }
-        button{
+
+        button {
             margin-top: 50px;
             margin-left: 600px;
             width: 100px;
@@ -72,17 +75,18 @@
 <body>
     <section>
         <div class="container">
-            <div id="box1"></div>
-            <div id="box2"></div>
-            <div id="box3"></div>
-            <div id="box4"></div>
-            <div id="box5"></div>
-            <div id="box6"></div>
-            <div id="box7"></div>
-            <div id="box8"></div>
-            <div id="box9"></div>
+            <div id="box1" class="box"></div>
+            <div id="box2" class="box"></div>
+            <div id="box3" class="box"></div>
+            <div id="box4" class="box"></div>
+            <div id="box5" class="box"></div>
+            <div id="box6" class="box"></div>
+            <div id="box7" class="box"></div>
+            <div id="box8" class="box"></div>
+            <div id="box9" class="box"></div>
         </div>
         <button id="reset">Reset</button>
+        <button id="pat1">pat1</button>
     </section>
 
     <script>
@@ -95,8 +99,8 @@
         const divs = document.querySelector('.container div');
         const player1 = "X";
         const player2 = "O";
-        const pattern1 = document.querySelector('#box1', '#box2', '#box3');
-        const pattern2 = document.querySelector('#box1', '#box5', '#box9');
+        const pattern1 = winner(1, 2, 3);
+        const pattern2 = winner(1, 5, 9);
         const pattern3 = document.querySelector('#box1', '#box4', '#box7');
         const pattern4 = document.querySelector('#box7', '#box8', '#box9');
         const pattern5 = document.querySelector('#box3', '#box5', '#box7');
@@ -106,43 +110,49 @@
 
         //functions
 
-        function addPiece(e){
+        function addPiece(e) {
             e.target.innerHTML = player;
             console.log(player);
-            if(player === player1){
+            if (player === player1) {
                 player = player2;
-            }else{
+            } else {
                 player = player1;
             }
         }
 
-        function resetBoard()
-        {
+        function resetBoard() {
             const container = document.querySelector('.container');
-            for(let i = 0; i < container.children.length; i++){
+            for (let i = 0; i < container.children.length; i++) {
                 container.children[i].innerText = "";
                 console.log("Cleared Board");
             }
 
 
         }
-        function glowBoard(e){
+
+        function glowBoard(e) {
             e.style.backgroundColor = 'red';
 
         }
 
-        function winner(){
-            
-            
+        function winner(elements) {
+            const container = document.querySelector('.container');
+            for(let i = 0; i < container.children.length; i++){
+
+            }
+            //for (let i = 1; i < put1.length; i++); {
+            //console.log('hey');
+            //put1.innerText('X');
+            console.log('hey');
         }
+
 
         //execution of events
 
         container.addEventListener('click', addPiece);
         reset.addEventListener("click", resetBoard);
-       // container.addEventListener('onmouseover', glowBoard);
-
-
+        pat1.addEventListener('click', winner);
+        // container.addEventListener('onmouseover', glowBoard);
     </script>
 
 

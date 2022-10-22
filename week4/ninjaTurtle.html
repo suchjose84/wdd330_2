@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ninja Turtle Class Practice</h1>
+    <div id="response"></div>
+
+    <script>
+        /*class Turtle {
+            constructor(name, color) {
+                this.name = name;
+                this.weapon = 'hands';
+                let _color = color;
+                this.setColor = (color) => {
+                    if (typeof color === 'string') {
+                        return _color = color;
+                    } else {
+                        throw new Error('Color must be a string');
+                    }
+                }
+
+                this.getColor = () => _color;
+
+            }
+
+            toString() {
+                return `A turtle called ${this.name}`;
+            }
+            sayHi() {
+                return `Hi dude, my name is ${this.name}`;
+            }
+            attack() {
+                return `Feel the power of my ${this.weapon}!`;
+            }
+        }
+
+        const leo = new Turtle('Leonardo');
+        console.log(leo.name);
+        console.log(leo.sayHi());
+        Turtle.prototype.weapon = 'Hands';
+        Turtle.prototype.attack = function () {
+            return `Feel the power of my ${this.weapon}!`;
+        }
+
+        const raph = new Turtle('Raphael', 'Red');
+        console.log(raph.name);
+        console.log(raph.sayHi());
+        console.log(raph.weapon);
+        console.log(raph.attack());
+        console.log(raph.constructor.prototype);
+        console.log(Object.getPrototypeOf(raph));
+        console.log(Turtle.prototype.isPrototypeOf(raph));
+        console.log(raph.hasOwnProperty('name'));
+        console.log(raph.hasOwnProperty('weapon'));
+        Turtle.prototype.food = 'Pizza';
+        Turtle.prototype.eat = function () {
+            return 'Mmm, this ${this.food} tastes great!';
+        }
+
+        const mike = new Turtle('Michaelangelo');
+        console.log(mike.eat());
+        mike.weapon = 'Nunchakus';
+        console.log(mike.attack());
+        console.log(raph.getColor());
+        console.log(raph.setColor('brown'));
+
+        console.log(raph.toString());
+        */
+
+        /*class Turtle {
+            constructor(name) {
+                this.name = name;
+            }
+            sayHi() {
+                return `Hi dude, my name is ${this.name}`;
+            }
+
+            swim() {
+                return `${this.name} paddles in the water`;
+            }
+        }
+
+        class NinjaTurtle extends Turtle {
+            constructor(name) {
+                super(name);
+                this.weapon = 'hands';
+            }
+            attack() {
+                return `Feel the power of my ${this.weapon}!`
+            }
+        }
+
+        */
+
+        /*const Human = {
+            arms: 2,
+            legs: 2,
+            walk() {
+                console.log('Walking');
+            }
+        }
+
+        const lois = Object.create(Human);
+        lois.name = "Lois Lane";
+        lois.job = "Reporter";
+        console.log(lois.arms);
+        console.log(lois.legs);
+        console.log(lois.walk());
+        */
+       
+        
+
+    </script>
+
+</body>
+
+</html>
