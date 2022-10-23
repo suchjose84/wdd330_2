@@ -3,9 +3,11 @@ import TodoController from './todo.js';
 const getController = new TodoController();
 const onClickSpan = document.querySelector('.addBtn');
 const input = document.getElementById('myInput');
-const btns = document.querySelectorAll('.close');
+const list = document.querySelector('UL');
 
-
+getController.addCheckedSymbol();
+getController.createCloseButton();
+getController.hideList();
 
 //Event Listeners
 onClickSpan.addEventListener('click', () => {
@@ -18,7 +20,14 @@ input.addEventListener('keypress', (event) => {
     }
 });
 
-getController.createCloseButton();
-getController.addCheckedSymbol();
-getController.hideList();
-getController.countTask2();
+list.addEventListener('click', function (ev) {
+    if (ev.target) {
+        getController.remainingTask();
+    }
+    
+}, false);
+
+
+
+
+//getController.countTask300();

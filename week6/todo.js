@@ -23,8 +23,7 @@
             var i;
 
             this.hideList();
-            this.countTask();
-            this.countTask2();
+            this.remainingTask();
 
         }
 
@@ -49,6 +48,7 @@
                     ev.target.classList.toggle('checked');
                 }
             }, false);
+            
         }
 
         hideList() {
@@ -58,8 +58,11 @@
             for (i = 0; i < close.length; i++) {
                 close[i].onclick = function () {
                     var div = this.parentElement;
+                    console.log('bukayo');
+                    
                     div.style.display = "none";
                 }
+                
 
             }
 
@@ -68,7 +71,9 @@
             var myNodelist = document.getElementsByTagName("LI");
             var div = document.getElementById('countTasks');
             var i;
-            for (i = 0; i < myNodelist.length; i++) {}
+            for (i = 0; i < myNodelist.length; i++) {
+
+            }
             div.textContent = `${i} tasks`;
 
             return;
@@ -106,6 +111,41 @@
                 })
 
             });
+        }
+
+        countTask300() {
+            var myNodelist = document.getElementsByTagName("LI");
+            var lists = [...myNodelist];
+            var div = document.getElementById('countTasks');
+            var i = 0;
+            lists.filter((list) => {
+                if (list.classList == 'checked' || list.display == 'none') {
+                    i = i - 1;
+                } else {
+                    i++;
+                }
+
+            });
+            div.textContent = `${i} tasks`;
+            return;
+        }
+
+        remainingTask() {
+            const list = [...document.getElementsByTagName('li')];
+            const div = document.getElementById('countTasks');
+            const filteredList = list.filter((data) => {
+                return data.className === 'checked' || data.style.display === "none";
+
+            });
+            
+            console.log(list.length);
+            console.log(filteredList.length);
+            console.log(list);
+
+
+            div.textContent = `${list.length - filteredList.length} tasks`;
+
+            
         }
 
     }
