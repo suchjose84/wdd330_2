@@ -76,7 +76,7 @@
                 return data.className === 'checked' || data.style.display === "none";
 
             });
-            div.textContent = `${list.length - filteredList.length} tasks`;
+            div.textContent = `Remaining tasks: ${list.length - filteredList.length}`;
 
             
         }
