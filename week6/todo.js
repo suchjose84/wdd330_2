@@ -1,5 +1,6 @@
     export default class TodoController {
-        constructor(){
+        constructor(list){
+            this.list = list;
         }
 
         // Create a new list item when clicking on the "Add" button
@@ -60,8 +61,6 @@
             for (i = 0; i < close.length; i++) {
                 close[i].onclick = function () {
                     var div = this.parentElement;
-                    console.log('bukayo');
-                    
                     div.style.display = "none";
                 }
                 

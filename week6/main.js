@@ -27,7 +27,3 @@ list.addEventListener('click', function (ev) {
     
 }, false);
 
-
-
-
-//getController.countTask300();
