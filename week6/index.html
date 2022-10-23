@@ -1,30 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./main.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week4 Notes</title>
+    <style>
+        html {
+            font-size: 14px;
+        }
 
+        body {
+            background-color: rgba(202, 221, 213, .5);
+            font-family: 'Catamaran', sans-serif;
+        }
+
+        main {
+            margin: 0 auto;
+            max-width: 90%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        @media only screen and (min-width: 35em) {
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            body {
+                font-size: 1.3rem;
+            }
+
+        }
+
+        @media only screen and (min-width: 64em) {
+
+            h1 {
+                font-size: 4rem;
+            }
+
+            h2 {
+                font-size: 3rem;
+            }
+
+            body {
+                font-size: 2rem;
+            }
+
+        }
+    </style>
 </head>
 
 <body>
+    <main>
+        <h1>WDD 330 Portfolio</h1>
+        <h2>Week 06</h2>
+        <p></p>
 
-    <section class="todoContainer">
-        <div id="myDIV" class="header">
-            <h2 style="margin:5px">To Do List</h2>
-            <input type="text" id="myInput" placeholder="Put tasks Here">
-            <span id="addBtn" class="addBtn">Add</span>
-        </div>
+        <h3>Notes</h3>
+        <p>To be honest, I just did this assignment this week because I was still reading and analyzing Object Oriented
+            Programming and I did not have much time because of work. My todo is working but still needs tweaking. Here is the <a
+                href="https://suchjose84.github.io/wdd330_2/week6/todo.html">link:</a>
+        </p>
 
-        <ul id="myUL">
+        <h3>Questions</h3>
+        <p>None</p>
 
-        </ul>
-        <div id="countTasks" class="footer">0 Tasks</div>
-    </section>
+    </main>
 
-
-
-    <script src="./main.js" type="module"></script>
+    <!--Google Webfont-->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Catamaran', 'Amita', 'Quicksand', 'Roboto Slab']
+            }
+        });
+    </script>
 
 </body>
 
