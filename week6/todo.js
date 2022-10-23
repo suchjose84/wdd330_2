@@ -1,4 +1,6 @@
     export default class TodoController {
+        constructor(){
+        }
 
         // Create a new list item when clicking on the "Add" button
         newElement() {
@@ -24,6 +26,7 @@
 
             this.hideList();
             this.remainingTask();
+            this.taskJson();
 
         }
 
@@ -40,8 +43,8 @@
             }
 
         }
+        // Add a "checked" symbol when clicking on a list item
         addCheckedSymbol() {
-            // Add a "checked" symbol when clicking on a list item
             var list = document.querySelector('ul');
             list.addEventListener('click', function (ev) {
                 if (ev.target.tagName === 'LI') {
@@ -50,9 +53,8 @@
             }, false);
             
         }
-
+        // Click on a close button to hide the current list item
         hideList() {
-            // Click on a close button to hide the current list item
             var close = document.getElementsByClassName("close");
             var i;
             for (i = 0; i < close.length; i++) {
@@ -67,68 +69,6 @@
             }
 
         }
-        countTask() {
-            var myNodelist = document.getElementsByTagName("LI");
-            var div = document.getElementById('countTasks');
-            var i;
-            for (i = 0; i < myNodelist.length; i++) {
-
-            }
-            div.textContent = `${i} tasks`;
-
-            return;
-
-        }
-        countTask2() {
-            var myNodelist = [...document.getElementsByTagName("LI")];
-            var div = document.getElementById('countTasks');
-
-            var filteredNodelist = myNodelist.filter((node) => {
-                if (node.classList != "checked") {
-
-                }
-            });
-            console.log(filteredNodelist.length);
-
-
-            //div.textContent = `${i} tasks`;
-
-            return;
-
-        }
-
-        savetask() {
-            let myobj = this.newElement();
-            localStorage.setItem('taskObj', myobj);
-            console.log('booyayaya');
-
-        }
-        recount() {
-            getClose.forEach(function (close) {
-                close.addEventListener('click', function (e) {
-                    console.log(e.currentTarget);
-
-                })
-
-            });
-        }
-
-        countTask300() {
-            var myNodelist = document.getElementsByTagName("LI");
-            var lists = [...myNodelist];
-            var div = document.getElementById('countTasks');
-            var i = 0;
-            lists.filter((list) => {
-                if (list.classList == 'checked' || list.display == 'none') {
-                    i = i - 1;
-                } else {
-                    i++;
-                }
-
-            });
-            div.textContent = `${i} tasks`;
-            return;
-        }
 
         remainingTask() {
             const list = [...document.getElementsByTagName('li')];
@@ -137,15 +77,17 @@
                 return data.className === 'checked' || data.style.display === "none";
 
             });
-            
-            console.log(list.length);
-            console.log(filteredList.length);
-            console.log(list);
-
-
             div.textContent = `${list.length - filteredList.length} tasks`;
 
             
+        }
+        taskJson(){
+            const list = [...document.getElementsByTagName('LI')];
+            const stringifiedList = JSON.stringify(list);
+            console.log(stringifiedList);
+            localStorage.setItem('myTasks', stringifiedList);
+            const parsedJson = JSON.parse(stringifiedList);
+            console.log(parsedJson);
         }
 
     }
