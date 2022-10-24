@@ -11,7 +11,7 @@ getController.hideList();
 
 //Event Listeners
 onClickSpan.addEventListener('click', () => {
-    getController.newElement();
+    getcontroller.newElement();
 });
 input.addEventListener('keypress', (event) => {
     if (event.keyCode === 13) {

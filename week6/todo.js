@@ -1,12 +1,12 @@
     export default class TodoController {
-        constructor(list){
-            this.list = list;
+        constructor(inputValue){
+            this.value = inputValue;
         }
 
         // Create a new list item when clicking on the "Add" button
-        newElement() {
+        newElement(value) {
             var li = document.createElement("li");
-            var inputValue = document.getElementById("myInput").value;
+            var inputValue = document.getElementById('myInput').value;
             var t = document.createTextNode(inputValue);
             li.appendChild(t);
             if (inputValue === '') {
@@ -81,12 +81,10 @@
             
         }
         taskJson(){
-            const list = [...document.getElementsByTagName('LI')];
-            const stringifiedList = JSON.stringify(list);
-            console.log(stringifiedList);
-            localStorage.setItem('myTasks', stringifiedList);
-            const parsedJson = JSON.parse(stringifiedList);
-            console.log(parsedJson);
+            const array1 = new Array;
+            for
         }
+
+        
 
     }
