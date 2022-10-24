@@ -22,9 +22,6 @@
             span.appendChild(txt);
             li.appendChild(span);
 
-            var close = document.getElementsByClassName("close");
-            var i;
-
             this.hideList();
             this.remainingTask();
 
