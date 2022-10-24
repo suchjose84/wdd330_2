@@ -27,7 +27,6 @@
 
             this.hideList();
             this.remainingTask();
-            this.taskJson();
 
         }
 
