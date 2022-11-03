@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        h1:hover span {
+            color: red;
+            transform: rotate(10deg) translateX(40px) scale(1.5);
+            display: inline-block;
+            transition-property: transform, color;
+            transition-duration: 200ms;
+            transition-timing-function: ease-out;
+            transition-delay: 50ms;
+
+        }
+        */
+        /*shorhand version */
+        h1 span {
+            /*color: red;
+            transform: rotate(10deg) translateX(40px) scale(1.5);
+            display: inline-block;
+            transition: transform, color 200ms ease-out 50ms;
+            */
+            animation-name: appearDisappear;
+            animation-duration: 5000ms;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+        }
+
+        @keyframes moveRight {
+            from {
+                transform: translateX(-50%);
+            }
+
+            to {
+                transform: translateX(50%);
+            }
+        }
+
+        @keyframes appearDisappear {
+
+            0%,
+            100% {
+                opacity: 0;
+            }
+
+            20%,
+            80% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bgMove {
+            100% {
+                background-position: 120% 0;
+            }
+        }
+
+        canvas {
+            border: dotted 2px black;
+            margin: 0 20px;
+        }
+
+        svg {
+            border: 1px solid black;
+        }
+
+        .spin {
+            position: absolute;
+            top: 8px;
+            left: 55px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Put your <span class="ad-ad2">dukes</span> up, sire</h1>
+    <section class="canvases">
+        <canvas id="myCanvas" class="myCanvas" width="200" height="200">
+            Sorry! Your browser does not support canvas
+        </canvas>
+
+
+        <canvas id="potaka" class="demo2" width="200" height="200">
+            Sorry! Your browser does not support canvas
+        </canvas>
+        <canvas id="canvas3" class="canvas3" width="200" height="200">
+            Sorry! Your browser does not support canvas
+        </canvas>
+
+        <canvas id="canvas4" class="canvas4" width="200" height="200">
+            Sorry! Your browser does not support canvas
+        </canvas>
+
+        <h2>Demo 5: Saving canvas drawings</h2>
+        <canvas width="200" height="200" id="demo5" class="myCanvas">
+            Sorry! Your browser doesn't support Canvas.
+        </canvas>
+
+        <button name="saveButton" id="saveButton">Save Drawing</button>
+
+        <h2>Demo 6: Drawing an image to the canvas</h2>
+        <canvas width="200" height="200" id="demo6" class="myCanvas">
+            Sorry! Your browser doesn't support Canvas.
+        </canvas>
+
+        <img src="images/target.jpg" id="myImageElem">
+
+        <!--Video Exercise. It is not working. No training on videos yet so I don't know why it's not working.
+        I'm gonna pass on this one-->
+        <h2>Video Black and White Demo</h2>
+        <canvas id='canvasOverlay' width="400" height="400"></canvas>
+        <video id="video" controls width="375" height="280" autoplay type="wmv">
+            <source src="videos/roblox-video.wmv" type='video/wmv'>
+        </video>
+
+        <!--Drawing Circle SVG-->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+            <circle cx="50" cy="50" r="25" fill="red" />
+        </svg>
+
+        <!--Drawing Rectangle SVG-->
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 400 400">
+            <desc>Drawing a rectangle</desc>
+            <rect x="10" y="10" width="100" height="100" fill="blue" stroke="red" stroke-width="3" />
+
+        </svg>
+        <!--Complex Shapes, dont do it. Use an image editor at https://inkscape.org/-->
+
+        <!--Drawing with Raphael-->
+
+        <article class="ad-ad4">
+            <div id="mapDiv">
+                <h1 id="geoHeading">Where in the world are you?</h1>
+                <form id="geoForm">
+                    <input type="button" id="geobutton" value="Tell us!">
+                </form>
+                <div class="spin" id="spinner"></div>
+            </div>
+        </article>
+
+
+    </section>
+
+    <!--Drag and Drop-->
+    <article id="ac3">
+        <h1>Wai-Aria? HAHA!</h1>
+        <h2 id="catHeading">Form Accessibility</h2>
+
+        <img data-src="https://learnable-static.s3.amazonaws.com/premium/reeedr/books/html5-css3-for-the-real-world-2nd-edition/images/cat.png"
+            alt="WAI-ARIA Cat" id="cat">
+
+        <div class="content">
+            <p id="mouseContainer" class="mc">
+                <img data-src="https://learnable-static.s3.amazonaws.com/premium/reeedr/books/html5-css3-for-the-real-world-2nd-edition/images/computer-mouse-pic.svg"
+                    alt="mouse treat" id="mouse1" draggable="true">
+                <img data-src="https://learnable-static.s3.amazonaws.com/premium/reeedr/books/html5-css3-for-the-real-world-2nd-edition/images/computer-mouse-pic.svg"
+                    alt="mouse treat" id="mouse2" draggable="true">
+                <img data-src="https://learnable-static.s3.amazonaws.com/premium/reeedr/books/html5-css3-for-the-real-world-2nd-edition/images/computer-mouse-pic.svg"
+                    alt="mouse treat" id="mouse3" draggable="true">
+            </p>
+        </div>
+    </article>
+
+    <!--script for drag and drop-->
+    <script>
+        var mice = document.querySelectorAll("#mouseContainer img");
+        var mouse = null;
+        for (var i = 0; i < mice.length; i++) {
+            mouse = mice[i];
+            mouse.addEventListener('dragstart', function (event) {
+                event.dataTransfer.setData("text/plain", this.id);
+            });
+        }
+        var cat = document.getElementById("cat");
+        cat.addEventListener("dragover", function (event) {
+            event.preventDefault();
+        });
+
+        cat.addEventListener("drop", function (event) {
+            var mouseHash = {
+                mouse1: "NOMNOMNOM",
+                mouse2: "Meow",
+                mouse3: "Purrr..."
+            };
+            var catHeading = document.getElementById('catHeading');
+            var mouseID = event.originalEvent.dataTransfer.getData("text/plain");
+            catHeading.innerHTML = mouseHash[mouseID];
+            var mousey = document.getElementById(item);
+            mousey.parentNode.removeChild(mousey);
+            event.preventDefault();
+
+        });
+
+    </script>
+
+    <script src="canvas.js"></script>
+    <script src="videoToBW.js"></script>
+    <script src="geolocation.js"></script>
+
+</body>
+
+</html>
