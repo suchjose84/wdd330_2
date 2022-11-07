@@ -36,7 +36,7 @@ function renderPokeList(data) {
         <td>${speed}</td>
         `;
 
-
+        //
         //add the list item to the list
         list.appendChild(listItem);
 
