@@ -4,7 +4,7 @@ const pokemonID = 1;
 
 
 
-function getPokemonData(url, pokemonID) {
+function getPokemonData(url = "https://pokeapi.co/api/v2/pokemon/", pokemonID) {
     completeURL = `${url}${pokemonID}`
     getPokeJSON(completeURL).then(function (data) {
         const results = data;
@@ -67,7 +67,7 @@ function getPokeJSON(url) {
 
 
 for(var i = 1; i < 21 ; i++){
-    getPokemonData(fetchURL1, i);
+    getPokemonData(url, i);
 
 }
 
