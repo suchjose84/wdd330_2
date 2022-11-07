@@ -1,0 +1,81 @@
+const fetchURL1 = "https://pokeapi.co/api/v2/pokemon/"
+const pokemonID = 1;
+
+
+
+
+function getPokemonData(url, pokemonID) {
+    completeURL = `${url}${pokemonID}`
+    getPokeJSON(completeURL).then(function (data) {
+        const results = data;
+        console.log(results);
+        renderPokeList(results);
+    });
+}
+
+function renderPokeList(data) {
+    let name = data.species.name;
+    let id = data.id;
+    let hp = data.stats[0].base_stat;
+    let att = data.stats[1].base_stat;
+    let def = data.stats[2].base_stat;
+    let spAtt = data.stats[3].base_stat;
+    let spDef = data.stats[4].base_stat;
+    let speed = data.stats[5].base_stat;
+
+    const list = document.getElementById("pokemonList").children[1];
+
+    let listItem = document.createElement("tr");
+        listItem.innerHTML = `<td><a href="">${name}</a></td>
+        <td>${id}</td>
+        <td>${hp}</td>
+        <td>${att}</td>
+        <td>${def}</td>
+        <td>${spAtt}</td>
+        <td>${spDef}</td>
+        <td>${speed}</td>
+        `;
+
+
+        //add the list item to the list
+        list.appendChild(listItem);
+
+
+
+    
+    /*
+        
+        */
+}
+
+
+
+
+function getPokeJSON(url) {
+    return fetch(url)
+        .then(function (response) {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            } else {
+                return response.json();
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+
+
+for(let i=1; i < 20; i++){
+    getPokemonData(fetchURL1, i);
+
+}
+
+
+
+
+
+
+
+
+
