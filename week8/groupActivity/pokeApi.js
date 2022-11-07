@@ -40,12 +40,6 @@ function renderPokeList(data) {
         //add the list item to the list
         list.appendChild(listItem);
 
-
-
-    
-    /*
-        
-        */
 }
 
 
