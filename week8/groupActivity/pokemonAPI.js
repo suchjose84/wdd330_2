@@ -26,7 +26,7 @@ function renderPokeList(data) {
     const list = document.getElementById("pokemonList").children[1];
 
     let listItem = document.createElement("tr");
-        listItem.innerHTML = `<td><a href="">${name}</a></td>
+        listItem.innerHTML = `<td><a href="${fetchURL1}${data.id}">${name}</a></td>
         <td>${id}</td>
         <td>${hp}</td>
         <td>${att}</td>
@@ -66,10 +66,11 @@ function getPokeJSON(url) {
 }
 
 
-for(let i=1; i < 20; i++){
+for(var i = 1; i < 21 ; i++){
     getPokemonData(fetchURL1, i);
 
 }
+
 
 
 
