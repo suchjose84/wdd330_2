@@ -15,6 +15,7 @@ function getPokemonData(url, pokemonID) {
 
 function renderPokeList(data) {
     let name = data.species.name;
+    let nameCap = name.charAt(0).toUpperCase() + name.slice(1);
     let id = data.id;
     let hp = data.stats[0].base_stat;
     let att = data.stats[1].base_stat;
@@ -26,7 +27,7 @@ function renderPokeList(data) {
     const list = document.getElementById("pokemonList").children[1];
 
     let listItem = document.createElement("tr");
-        listItem.innerHTML = `<td><a href="${fetchURL1}${data.id}">${name}</a></td>
+        listItem.innerHTML = `<td><a href="${fetchURL1}${data.id}">${nameCap}</a></td>
         <td>${id}</td>
         <td>${hp}</td>
         <td>${att}</td>
