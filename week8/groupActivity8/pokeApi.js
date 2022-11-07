@@ -116,7 +116,6 @@ function clickNext() {
             getPokemonData(fetchURL1, i);
 
         }
-        event.preventDefault();
 
     }, false);
 }
