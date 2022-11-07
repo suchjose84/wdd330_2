@@ -21,6 +21,14 @@ const weeks = [{
 {
     label: "Week6 Notes",
     url: "week6/index.html"
+},
+{
+    label: "Week7 Notes",
+    url: "week7/index.html"
+},
+{
+    label: "Week8 Notes",
+    url: "week8/index.html"
 }
 ]
 
