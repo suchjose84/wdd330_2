@@ -118,10 +118,4 @@ function clickNext() {
 
     }, false);
 }
-
-function clickPrev() {
-
-    
-
-}
 clickNext();
