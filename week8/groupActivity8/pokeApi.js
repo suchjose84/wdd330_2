@@ -1,17 +1,20 @@
 const fetchURL1 = "https://pokeapi.co/api/v2/pokemon/"
-const pokemonID = 1;
-
-
+//var nextElement = document.getElementById("nextLink");
+//var prevElement = document.getElementById("previousLInk");
+var pokeStart = 1;
 
 
 function getPokemonData(url, pokemonID) {
-    completeURL = `${url}${pokemonID}`
+    pokeStart = pokemonID + 1;
+    console.log(pokeStart);
+    completeURL = `${url}${pokemonID}`;
     getPokeJSON(completeURL).then(function (data) {
         const results = data;
-        console.log(results);
         renderPokeList(results);
     });
+
 }
+
 
 function renderPokeList(data) {
     let name = data.species.name;
@@ -25,9 +28,8 @@ function renderPokeList(data) {
     let speed = data.stats[5].base_stat;
 
     const list = document.getElementById("pokemonList").children[1];
-
     let listItem = document.createElement("tr");
-        listItem.innerHTML = `<td><a href="${fetchURL1}${data.id}">${nameCap}</a></td>
+    listItem.innerHTML = `<td><a href="${fetchURL1}${data.id}">${nameCap}</a></td>
         <td>${id}</td>
         <td>${hp}</td>
         <td>${att}</td>
@@ -36,15 +38,10 @@ function renderPokeList(data) {
         <td>${spDef}</td>
         <td>${speed}</td>
         `;
+    list.appendChild(listItem);
 
-        //
-        //add the list item to the list
-        list.appendChild(listItem);
 
 }
-
-
-
 
 function getPokeJSON(url) {
     return fetch(url)
@@ -60,18 +57,73 @@ function getPokeJSON(url) {
         });
 }
 
+function show20(start, end) {
+    var pokemonID = start;
+    var plus20 = end;
 
-for(var i = 1; i < 21 ; i++){
-    getPokemonData(fetchURL1, i);
+    for (var i = pokemonID; i < plus20; i++) {
+        getPokemonData(fetchURL1, i);
+        pokemonID = i;
+
+    }
+
+}
+
+function add20(start, end) {
+
+    var pokemonID = start;
+    var plus20 = pokemonID + 20;
+    console.log("kapow");
 
 }
 
 
+function kapow() {
+    show20(1, 21);
+}
 
+function kapow2() {
+    console.log("pota");
+}
 
+kapow();
 
+function clickNext() {
 
+    var nextElement = document.getElementById("nextLink");
+    nextElement.addEventListener('click', function (event) {
+        event.preventDefault();
+        const list = document.getElementById("pokemonList").children[1];
+        list.innerHTML = "";
+        var pokemonID = pokeStart;
+        var plus20 = pokemonID + 20;
 
+        for (var i = pokemonID; i < plus20; i++) {
+            getPokemonData(fetchURL1, i);
 
+        }
 
+    }, false);
 
+    var prevElement = document.getElementById('prevLink');
+    prevElement.addEventListener('click', function (event) {
+        pokeStart = pokeStart - 20;
+        const list = document.getElementById("pokemonList").children[1];
+        list.innerHTML = "";
+        var pokemonID = pokeStart;
+        var plus20 = pokemonID + 20;
+        for (var i = pokemonID; i < plus20; i++) {
+            getPokemonData(fetchURL1, i);
+
+        }
+        event.preventDefault();
+
+    }, false);
+}
+
+function clickPrev() {
+
+    
+
+}
+clickNext();
