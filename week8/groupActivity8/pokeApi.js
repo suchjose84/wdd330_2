@@ -6,7 +6,6 @@ var pokeStart = 1;
 
 function getPokemonData(url, pokemonID) {
     pokeStart = pokemonID + 1;
-    console.log(pokeStart);
     completeURL = `${url}${pokemonID}`;
     getPokeJSON(completeURL).then(function (data) {
         const results = data;
