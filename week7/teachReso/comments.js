@@ -1,5 +1,5 @@
-
-// A the code that is responsible to get and set data for a part of the application is often called a model. I've used that terminology here.
+// A the code that is responsible to get and set data for a part of the application is often called a model. 
+// I've used that terminology here.
 
 //commentModel
 class CommentModel {
@@ -8,7 +8,8 @@ class CommentModel {
     // get the initial list of comments out of local storage if it exists
     this.comments = readFromLS(this.type) || [];
   }
-  // I decided I could combine my getAllComments, and filterCommentsByName methods into one by passing in an optional query argument
+  // I decided I could combine my getAllComments, and filterCommentsByName methods into one by passing in an optional 
+  // query argument
   getComments(q = null) {
     if (q === null) {
       // no query, get all comments of the type
@@ -64,7 +65,8 @@ function renderCommentList(element, comments) {
   });
 }
 
-// Comments: this code handles getting the list of comments from the data source, and outputting them to the screen at the right time.  This is often catagorized as Controller code.
+// Comments: this code handles getting the list of comments from the data source, and outputting them to the screen 
+// at the right time.  This is often catagorized as Controller code.
 
 class Comments {
   constructor(type, commentElementId) {
