@@ -2,10 +2,12 @@ const fetchURL1 = "https://pokeapi.co/api/v2/pokemon/"
 //var nextElement = document.getElementById("nextLink");
 //var prevElement = document.getElementById("previousLInk");
 var pokeStart = 1;
+var list = document.getElementById("pokemonList").children[1];
 
 
 function getPokemonData(url, pokemonID) {
     pokeStart = pokemonID + 1;
+    //console.log(pokeStart);
     completeURL = `${url}${pokemonID}`;
     getPokeJSON(completeURL).then(function (data) {
         const results = data;
@@ -56,66 +58,41 @@ function getPokeJSON(url) {
         });
 }
 
-function show20(start, end) {
-    var pokemonID = start;
-    var plus20 = end;
+function clickPrev(pokeStart) {
+    pokeStart = pokeStart - 20;
+    let plus20 = pokeStart + 20;
+    show20(pokeStart, plus20);
+    console.log(pokeStart);
+}
 
-    for (var i = pokemonID; i < plus20; i++) {
+function show20(start, end) {
+
+    for (var i = start; i < end; i++) {
         getPokemonData(fetchURL1, i);
-        pokemonID = i;
 
     }
 
 }
+show20(pokeStart, pokeStart + 20);
 
-function add20(start, end) {
+var nextElement = document.getElementById("nextLink");
+nextElement.addEventListener('click', function (event) {
+    list.innerHTML = "";
+    event.preventDefault();
+    let pokemonID = pokeStart;
+    let plus20 = pokemonID + 20;
+    show20(pokemonID, plus20);
+    console.log(pokeStart);
+}, false);
 
-    var pokemonID = start;
-    var plus20 = pokemonID + 20;
-    console.log("kapow");
+/*
+var prevElement = document.getElementById('prevLink');
+prevElement.addEventListener('click', function (pokeStart){
+    //event.preventDefault();
+    list.innerHTML = "";
+    let pokemonID = pokestart - 20;
+    
+    show20(pokemonID, pokemonID + 20);
 
-}
-
-
-function kapow() {
-    show20(1, 21);
-}
-
-function kapow2() {
-    console.log("pota");
-}
-
-kapow();
-
-function clickNext() {
-
-    var nextElement = document.getElementById("nextLink");
-    nextElement.addEventListener('click', function (event) {
-        event.preventDefault();
-        const list = document.getElementById("pokemonList").children[1];
-        list.innerHTML = "";
-        var pokemonID = pokeStart;
-        var plus20 = pokemonID + 20;
-
-        for (var i = pokemonID; i < plus20; i++) {
-            getPokemonData(fetchURL1, i);
-
-        }
-
-    }, false);
-
-    var prevElement = document.getElementById('prevLink');
-    prevElement.addEventListener('click', function (event) {
-        pokeStart = pokeStart - 20;
-        const list = document.getElementById("pokemonList").children[1];
-        list.innerHTML = "";
-        var pokemonID = pokeStart;
-        var plus20 = pokemonID + 20;
-        for (var i = pokemonID; i < plus20; i++) {
-            getPokemonData(fetchURL1, i);
-
-        }
-
-    }, false);
-}
-clickNext();
+}, false);
+*/
