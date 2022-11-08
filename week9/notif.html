@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hi</h1>
+
+    <script>
+        if (window.Notification) {
+            Notification.requestPermission()
+                .then((permission) => {
+                    if (Notification.permission === 'granted') {
+                        const notification = new Notification('JavaScript: Novice to Ninja', {
+                            body: 'The new book from SitePoint',
+                            icon: 'sitepointlogo.png'
+
+                        });
+                        notification.addEventListener('click', () => {
+                            window.open('https://sitepoint.com')
+                        }, false);
+                    }
+                });
+        }
+    </script>
+</body>
+
+</html>

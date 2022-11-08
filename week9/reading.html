@@ -1,0 +1,91 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>The Window Object</h1>
+
+    <script>
+        // from within the global scope
+        const global = this;
+        console.log(global);
+        window.setTimeout( () => alert("Time's Up!"), 3000);
+        
+        function chant(){
+            console.log('Beetlejuice'); }
+
+        const summon = window.setInterval(chant,1000);
+
+
+    </script>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #square {
+            margin: 100px;
+            width: 100px;
+            height: 100px;
+            background: #cc0;
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(3600deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id='square'></div>
+
+
+    <script>
+        /*
+        const squareElement = document.getElementById('square');
+        let angle = 0;
+
+        setInterval(() => {
+            angle = (angle + 2) % 360;
+            squareElement.style.transform = `rotate(${angle}deg)`
+        }, 1000 / 60);
+        
+        const squareElement = document.getElementById('square');
+        let angle = 0;
+
+        function rotate() {
+            angle = (angle + 2) % 360;
+            squareElement.style.transform = `rotate(${angle}deg)`
+            window.requestAnimationFrame(rotate);
+        }
+
+        const id = requestAnimationFrame(rotate);
+
+        */
+    </script>
+</body>
+
+</html>
+
+-->
+
