@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin: 0;
+    text-align: center;
+    font-family: 'Orbitron', 'sans-serif';
+    background-color: rgba(47, 79, 79, 1);
+    height: 75px;
+}
+
+header h1 {
+    margin: 0;
+    color: rgb(255, 255, 240);
+    padding: .5rem;
+    font-size: 1.5rem;
+}
+
+nav {
+    width: 98%;
+    margin: 0 auto;
+    height: 30px;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+}
+
+nav label {
+    display: flex;
+    align-items: center;
+    border: 1px solid green;
+    height: 100%;
+    width: 200px;
+    background-color: rgb(47, 79, 79);
+    border-radius: 5px;
+    font-size: 1.5rem;
+    padding: 5px;
+
+
+}
+
+nav label input {
+    height: 90%;
+    width: 85%;
+    background-color: rgb(47, 79, 79);
+    padding-left: 10px;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+
+
+
+}
+
+nav label input:focus {
+    outline: none;
+}
+main {
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgb(220,220,220);
+    border-radius: 8px;
+    padding: 1%;
+}
+main h1 {
+    margin: 0;
+    text-align: center;
+}
+main .nextLink {
+    display: flex;
+    justify-content: space-between;
+}
+
+table {
+    border: 1px solid black;
+}
+tr, td, th {
+    border: 1px solid black;
+    
+}
