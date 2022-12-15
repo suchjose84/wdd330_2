@@ -67,8 +67,6 @@ a.appendChild(textNode);
 
 li.appendChild(a);
 
-
-
 document.querySelector('.weeks').appendChild(li);
 
 
