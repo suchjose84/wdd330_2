@@ -34,6 +34,27 @@ const weeks = [{
     label: "Week9 Notes",
     url: "week9/index.html"
 }
+,
+{
+    label: "Week10 Notes",
+    url: "week9/index.html"
+},
+{
+    label: "Week11 Notes",
+    url: "week9/index.html"
+},
+{
+    label: "Week12 Notes",
+    url: "week9/index.html"
+},
+{
+    label: "Week13 Notes",
+    url: "week9/index.html"
+},
+{
+    label: "Block 2 Challenge",
+    url: "week14/index.html"
+}
 ]
 
 for (let i = 0; i < weeks.length; i++) {
