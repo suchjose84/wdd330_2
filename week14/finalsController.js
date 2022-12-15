@@ -4,6 +4,7 @@ import Pokemon from './finalsModel.js';
 const searchInput = document.getElementById('searchInput');
 const magGlassIcon = document.getElementById('searchBar').lastChild;
 
+
 //Event when enter is pressed on the search bar
 searchInput.addEventListener('keypress', (event) => {
     if (event.keyCode === 13) {
