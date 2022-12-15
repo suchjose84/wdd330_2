@@ -9,18 +9,22 @@ searchInput.addEventListener('keypress', (event) => {
     if (event.keyCode === 13) {
         event.preventDefault();
         //save input value to localStorage
-        localStorage.setItem('name', searchInput.value);
+        sessionStorage.setItem('name', searchInput.value);
         renderPage();
     }
 }, false);
 //when magnifying glass is clicked
 magGlassIcon.addEventListener('click', e => {
     e.preventDefault();
-    localStorage.setItem('name', searchInput.value);
+    sessionStorage.setItem('name', searchInput.value);
     renderPage();
 });
 //when page is reloaded
-window.addEventListener('load', renderPage);
+window.addEventListener('load', (e) =>{
+    if('name' in sessionStorage){
+        renderPage();
+    }
+});
 
 //renders the page function... like what I named it
 function renderPage() {
@@ -39,12 +43,8 @@ function renderPage() {
         cardBox.remove();
         descDiv.remove();
     }
-    const data = new Pokemon(localStorage.getItem('name'));
+    const data = new Pokemon(sessionStorage.getItem('name'));
     data.getData();
     searchInput.value = "";
 
-}
-
-function renderNext(){
-    
 }
