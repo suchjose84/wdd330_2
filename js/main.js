@@ -37,19 +37,19 @@ const weeks = [{
 ,
 {
     label: "Week10 Notes",
-    url: "week9/index.html"
+    url: "week10/index.html"
 },
 {
     label: "Week11 Notes",
-    url: "week9/index.html"
+    url: "week11/index.html"
 },
 {
     label: "Week12 Notes",
-    url: "week9/index.html"
+    url: "week12/index.html"
 },
 {
     label: "Week13 Notes",
-    url: "week9/index.html"
+    url: "week13/index.html"
 },
 {
     label: "Block 2 Challenge",
