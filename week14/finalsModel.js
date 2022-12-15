@@ -24,10 +24,6 @@ class Pokemon {
             this.page.caption(data.types, specie);
             this.page.pokedex(data, specie);
             this.page.tableStats(data);
-            
-            console.log(data);
-            console.log(specie);
-
 
         })
         .catch(error => {
