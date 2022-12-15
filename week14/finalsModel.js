@@ -6,6 +6,8 @@ class Pokemon {
         this.url = 'https://pokeapi.co/api/v2/pokemon/' + this.name;
         this.url2 = 'https://pokeapi.co/api/v2/pokemon-species/' + this.name;
         this.page = new CreatePage;
+        this.next = "";
+        this.previousID = "";
 
     }
 
@@ -21,9 +23,7 @@ class Pokemon {
             this.page.title(data.name);
             this.page.caption(data.types, specie);
             this.page.pokedex(data, specie);
-            //this.page.nextAndPrevious(data);
-            
-            
+            this.page.tableStats(data);
             
             console.log(data);
             console.log(specie);
@@ -40,6 +40,8 @@ class Pokemon {
 
     fetchNext(number){
 
+    }
+    getNextData() {
 
     }
 }

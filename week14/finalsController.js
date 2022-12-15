@@ -44,3 +44,7 @@ function renderPage() {
     searchInput.value = "";
 
 }
+
+function renderNext(){
+    
+}
