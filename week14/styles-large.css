@@ -1,0 +1,24 @@
+@media only screen and (min-width: 64rem) {
+
+    header {
+        height: 75px;
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    main h1 {
+        font-size: 2.3rem;
+    }
+    main p {
+        font-size: 1rem;
+    }
+    #stats h2, #stats2Div h2 {
+        font-size: 1.5rem;
+    }
+
+
+
+
+}

@@ -1,0 +1,33 @@
+@media only screen and (min-width: 35em) {
+
+    header h1 {
+        font-size: 1.9rem;
+    }
+
+    main h1 {
+        font-size: 1.7rem;
+    }
+    
+
+    #cardBox {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+    #stats2Div {
+        grid-column: span 2;
+        width: 70%;
+    }
+
+    #stats h2, #stats2Div h2 {
+        font-size: 1.3rem;
+    }
+    #stats th, #stats2Div th {
+        font-size: 1.1rem;
+    }
+
+
+
+
+
+}
