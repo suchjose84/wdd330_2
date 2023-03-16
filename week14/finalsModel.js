@@ -2,7 +2,7 @@ import CreatePage from "./finalsView.js";
 
 class Pokemon {
     constructor(name) {
-        this.name = name;
+        this.name = name.toLowerCase();
         this.url = 'https://pokeapi.co/api/v2/pokemon/' + this.name;
         this.url2 = 'https://pokeapi.co/api/v2/pokemon-species/' + this.name;
         this.page = new CreatePage;
